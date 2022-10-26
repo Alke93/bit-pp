@@ -94,9 +94,19 @@ console.log(isSymmetric)
 var array1 = [4, 5, 6, 2]
 var array2 = [3, 8, 11, 9];
 var result = [];
-for (var i = 0; i < array1.length; i++) {
-    result.push(array1[i]);
-    result.push(array2[i]);
+// for (var i = 0; i < array1.length; i++) {
+//     result.push(array1[i]);
+//     result.push(array2[i]);
+// }
+
+// console.log(result);
+var j = 0;
+var z = 0;
+for(var i = 0; i< array1.length + array2.length; i+=2) {
+    j=i+1;
+    result[i]=array1[z];
+    result[j]=array2[z];
+    z++;
 }
 
 console.log(result);
