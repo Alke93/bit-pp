@@ -152,14 +152,14 @@ if (p > array.length) {
     console.log('Position number is greater than array length')
 }
 
-// var splicedRight = array.splice(p);
+var splicedRight = array.splice(p);
 
-// console.log(splicedRight);
-// console.log(array);
+console.log(splicedRight);
+console.log(array);
 
-// array.push(e);
-// var result = array.concat(splicedRight);
-// console.log(result);
+array.push(e);
+var result = array.concat(splicedRight);
+console.log(result);
 
 var result = [];
 for (var i = 0; i<=array.length;i++) {
