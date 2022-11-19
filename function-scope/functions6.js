@@ -2,16 +2,16 @@
 
 function addHeaderAndFooter(maxLength) {
     var result = '';
-    for(var i = 0; i< maxLength; i++) {
-        result +='*'
+    for (var i = 0; i < maxLength; i++) {
+        result += '*'
     }
 
     return result;
 }
 
 function addStars(str, maxLength) {
-    var result = '* '+str;
-    for(var i=0; i<maxLength - str.length - 4; i++) {
+    var result = '* ' + str;
+    for (var i = 0; i < maxLength - str.length - 4; i++) {
         result += ' ';
     }
 
@@ -24,9 +24,9 @@ function addFrame(inputArray) {
     }
 
     var maxLength = 0;
-    for(var i = 0; i< inputArray.length; i++) {
+    for (var i = 0; i < inputArray.length; i++) {
         var wordLength = inputArray[i].length;
-        if(wordLength > maxLength) {
+        if (wordLength > maxLength) {
             maxLength = wordLength;
         }
     }
@@ -35,13 +35,14 @@ function addFrame(inputArray) {
     var header = addHeaderAndFooter(maxLength);
     var result = header + '\n';
 
-    for(var i = 0; i< inputArray.length; i++) {
+    for (var i = 0; i < inputArray.length; i++) {
         result += addStars(inputArray[i], maxLength) + '\n'
     }
 
     result += header;
 
-    return result;    
+    return result;
 }
 
 console.log(addFrame(["Hello", "World", "in", "a", "frame"]))
+
