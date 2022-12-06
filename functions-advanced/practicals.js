@@ -78,3 +78,75 @@ function sortArrayByInputLetter(input, letter) {
 }
 
 console.log(sortArrayByInputLetter(['apple', 'tea', 'amazing', 'morning', 'Nostradamus', 'Avala'], 'a'))
+//Write a function that deletes a character from the given position in the string.
+function deleteAt(str = '', position = 0) {
+    if (!str || str.length == 0 || position > str.length) {
+        return str;
+    }
+
+    var result = '';
+    for (var i = 0; i < str.length; i++) {
+        if (i != position) {
+            result += str[i];
+        }
+    }
+
+    return result;
+}
+
+console.log(deleteAt('Goood morning', 3));
+
+//Write a function that deletes every second element of the given array.
+function deleteEverySecondElement(inputArray = []) {
+    if (!inputArray || inputArray.length == 0) {
+        return inputArray;
+    }
+
+    var result = [];
+    for (var i = 0; i < inputArray.length; i++) {
+        if (i % 2 === 0) {
+            result.push(inputArray[i]);
+        }
+    }
+
+    return result;
+}
+
+console.log(deleteEverySecondElement([3, 5, 1, 8, 90, -4, 23, 1, 67]))
+// Write a function that replaces the elements of the given array between two positions with
+// their doubled values.
+function replaceElementsBetweenIndexes(inputArray = [], positionA = 0, positionB = 1, inputNum = 0) {
+    if (!inputArray || inputArray.length == 0 || !positionA || !positionB || positionA >= positionB || positionB >= inputArray.length) {
+        return inputArray;
+    }
+
+    for (var i = positionA; i <= positionB; i++) {
+        inputArray[i] *= inputNum
+    }
+
+    return inputArray;
+}
+
+console.log(replaceElementsBetweenIndexes([3, 5, 1, 8, 90, -4, 23, 1, 67], 2, 8, 2))
+// Write a function that checks if every element of the first array is contained in the second
+// array. Be careful with repetitions!
+
+function compareArrays(array1 = [], array2 = []) {
+    if (!array1 || array1.length == 0 || !array2 || array2.length == 0) {
+        return false;
+    }
+
+    // return array1.every(element => array2.includes(element));
+    var result = [];
+    for (var i = 0; i < array1.length; i++) {
+        if(array2.includes(array1[i])) {
+            result.push(array1[i])
+        }
+    }
+
+    console.log(result);
+
+    return JSON.stringify(array1) === JSON.stringify(result);
+}
+
+console.log(compareArrays([3, 4, 1, 5], [8, 9, 3, 1, 11, 4, 3]))
