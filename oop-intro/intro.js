@@ -87,3 +87,40 @@ var arrayB = array1.filter(function(item) {
 
 console.log(array1);
 console.log(arrayB)
+
+function createProject (description, programmingLanguage, gitRepository, status) {
+    var project = {
+        description: description,
+        programmingLanguage: programmingLanguage,
+        gitRepository: gitRepository,
+        status: status,
+        printRepository: function () {
+            console.log (this.gitRepository);
+        },
+        isJavaScript: function (programmingLanguage) {
+            if (this.programmingLanguage === 'JavaScript') {
+                return true;
+            } else {
+                return false;
+            }
+        },
+        isDevelopment: function (status) { 
+            if (this.status === 'development') {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    };
+
+    return project;
+}
+
+var project1 = createProject ('project1', 'JavaScript', 'JS projects', 'development');
+var project2 = createProject ('project2', 'C#', 'C# projects', 'development');
+var project3 = createProject ('project3', 'Java', 'Java projects', 'development');
+
+project1.printRepository();
+console.log(project1.isDevelopment())
+console.log(project1.isJavaScript());
+console.log(project2.isJavaScript())
